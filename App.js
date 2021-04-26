@@ -37,7 +37,7 @@ const Section = ({children, title}): Node => {
             color: isDarkMode ? Colors.white : Colors.black,
           },
         ]}>
-        Dany Arkham
+        {title}
       </Text>
       <Text
         style={[
