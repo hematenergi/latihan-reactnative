@@ -13,9 +13,11 @@ import dany from '../../src/Assets/Images/dany.jpg';
 // functional component
 const Home = () => {
   return (
-    <View>
+    <ScrollView>
+      <Text style={styles.text}>Hire, {data.jobname}!</Text>
       <StylingReactNativeComponent />
-    </View>
+      <StylingReactNativeComponent />
+    </ScrollView>
   );
 };
 
@@ -39,8 +41,7 @@ const people = [{nama: 'Dany Arkham', salary: '500 USD'}];
 //styling component
 const StylingReactNativeComponent = () => {
   return (
-    <ScrollView>
-      <Text style={styles.text}>Hire, {data.jobname}!</Text>
+    <View>
       <View
         style={{
           width: 250,
@@ -105,7 +106,7 @@ const StylingReactNativeComponent = () => {
           />
         </View>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
