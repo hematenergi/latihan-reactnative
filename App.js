@@ -1,33 +1,54 @@
-import React, {Component} from 'react';
-import {Image, Text, View, StyleSheet, ScrollView} from 'react-native';
-import dany from './src/Images/dany.jpg';
+import React from 'react';
+import {
+  Image,
+  Text,
+  View,
+  StyleSheet,
+  ScrollView,
+  Button,
+  Alert,
+} from 'react-native';
+import dany from './src/Assets/Images/dany.jpg';
 
 // functional component
 const App = () => {
   return (
     <View>
-      {/* <SampleComponent /> */}
       <StylingReactNativeComponent />
     </View>
   );
 };
 
-const dataDiri = {
-  nama: 'Dany Arkham',
+//separate css function
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 20,
+    color: '#341f97',
+    fontWeight: 'bold',
+    marginTop: 40,
+    marginLeft: 20,
+  },
+});
+
+// data
+const data = {
+  jobname: 'React Native Developer',
 };
+const people = [{nama: 'Dany Arkham', salary: '500 USD'}];
 
 //styling component
 const StylingReactNativeComponent = () => {
   return (
     <ScrollView>
-      <Text style={styles.text}>Hallo, {dataDiri.nama}!</Text>
+      <Text style={styles.text}>Hire, {data.jobname}!</Text>
       <View
         style={{
-          width: 345,
-          height: 400,
+          width: 250,
+          height: 'auto',
           backgroundColor: '#5f27cd',
           borderWidth: 4,
           borderColor: '#222f3e',
+          borderRadius: 20,
           marginTop: 20,
           marginLeft: 20,
           padding: 20,
@@ -39,66 +60,53 @@ const StylingReactNativeComponent = () => {
             height: 200,
             borderWidth: 2,
             borderColor: '#222f3e',
+            borderRadius: 20,
             display: 'flex',
             justifyContent: 'center',
           }}
         />
-
-        <View />
+        <Text
+          style={{
+            fontSize: 15,
+            fontWeight: 'bold',
+            fontFamily: 'monospace',
+            textAlign: 'center',
+            marginTop: 5,
+          }}>
+          {people[0].nama} / {people[0].salary}
+        </Text>
+        <Text style={{fontFamily: 'monospace', textAlign: 'center'}}>
+          Mobile Apps Developer based on react native framework. can create
+          small to medium project with professional and care communication
+        </Text>
+        <View
+          style={{
+            margin: 10,
+            backgroundColor: '#1dd1a1',
+            borderRadius: 10,
+          }}>
+          {/* <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              textAlign: 'center',
+            }}>
+            HIRE ME!
+          </Text> */}
+          <Button
+            onPress={() => {
+              Alert.alert(
+                `Spend your ${people[0].salary} to hire ${people[0].nama}. Are you sure?`,
+              );
+            }}
+            title="HIRE ME"
+            color="#1dd1a1"
+            accessibilityLabel="Tap here to hire the developer"
+          />
+        </View>
       </View>
     </ScrollView>
   );
 };
-
-//styling css component
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 20,
-    color: '#341f97',
-    fontWeight: 'bold',
-    marginTop: 40,
-    marginLeft: 20,
-  },
-});
-
-const Dany = () => {
-  return <Text>dany arkham</Text>;
-};
-
-const Photo = () => {
-  return (
-    <Image
-      source={{uri: 'http://placeimg.com/100/100/tech'}}
-      style={{width: 100, height: 100}}
-    />
-  );
-};
-
-//class component
-
-class BoxGreen extends Component {
-  render() {
-    return (
-      <Image
-        source={{uri: 'http://placeimg.com/100/50/nature'}}
-        style={{width: 100, height: 50}}
-      />
-    );
-  }
-}
-
-class Profile extends Component {
-  render() {
-    return (
-      <View>
-        <Image
-          source={{uri: 'http://placeimg.com/100/100/animals'}}
-          style={{width: 100, height: 100}}
-        />
-        <Text style={{color: 'blue', fontSize: 24}}>ini adalah hewan</Text>
-      </View>
-    );
-  }
-}
 
 export default App;
