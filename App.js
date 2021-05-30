@@ -1,5 +1,6 @@
-import React, {Component, Profiler} from 'react';
-import {Image, Text, TextInput, View, StyleSheet} from 'react-native';
+import React, {Component} from 'react';
+import {Image, Text, View, StyleSheet, ScrollView} from 'react-native';
+import dany from './src/Images/dany.jpg';
 
 // functional component
 const App = () => {
@@ -11,23 +12,42 @@ const App = () => {
   );
 };
 
+const dataDiri = {
+  nama: 'Dany Arkham',
+};
+
 //styling component
 const StylingReactNativeComponent = () => {
   return (
-    <View>
-      <Text style={styles.text}>Styling Component</Text>
+    <ScrollView>
+      <Text style={styles.text}>Hallo, {dataDiri.nama}!</Text>
       <View
         style={{
-          width: 100,
-          height: 100,
+          width: 345,
+          height: 400,
           backgroundColor: '#5f27cd',
           borderWidth: 4,
           borderColor: '#222f3e',
           marginTop: 20,
           marginLeft: 20,
-        }}
-      />
-    </View>
+        }}>
+        <Image
+          source={dany}
+          style={{
+            width: 200,
+            height: 200,
+            borderWidth: 2,
+            borderColor: '#222f3e',
+            display: 'flex',
+            justifyContent: 'center',
+            marginLeft: 20,
+            marginTop: 20,
+          }}
+        />
+
+        <View />
+      </View>
+    </ScrollView>
   );
 };
 
@@ -35,24 +55,12 @@ const StylingReactNativeComponent = () => {
 const styles = StyleSheet.create({
   text: {
     fontSize: 20,
+    color: '#341f97',
+    fontWeight: 'bold',
+    marginTop: 40,
+    marginLeft: 20,
   },
 });
-
-const SampleComponent = () => {
-  return (
-    <View>
-      <View style={{width: 80, height: 80, backgroundColor: '#ff6b6b'}} />
-      <Text>dany</Text>
-      <Text>arkham</Text>
-      <Text>bekasi</Text>
-      <Dany />
-      <Photo />
-      <TextInput style={{borderWidth: 1}} />
-      <BoxGreen />
-      <Profile />
-    </View>
-  );
-};
 
 const Dany = () => {
   return <Text>dany arkham</Text>;
