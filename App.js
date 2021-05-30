@@ -30,6 +30,7 @@ const StylingReactNativeComponent = () => {
           borderColor: '#222f3e',
           marginTop: 20,
           marginLeft: 20,
+          padding: 20,
         }}>
         <Image
           source={dany}
@@ -40,8 +41,6 @@ const StylingReactNativeComponent = () => {
             borderColor: '#222f3e',
             display: 'flex',
             justifyContent: 'center',
-            marginLeft: 20,
-            marginTop: 20,
           }}
         />
 
